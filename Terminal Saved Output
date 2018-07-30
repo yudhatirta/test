@@ -1,0 +1,726 @@
+Last login: Wed Jul 25 11:02:19 on console
+ip-10-10-47-78:~ yudhatirtandanu$ ls
+Applications	Documents	Library		Music		Project
+Desktop		Downloads	Movies		Pictures	Public
+ip-10-10-47-78:~ yudhatirtandanu$ cd Project
+ip-10-10-47-78:Project yudhatirtandanu$ git clone https://github.com/traveloka/www
+Cloning into 'www'...
+Username for 'https://github.com': yudhatirta
+Password for 'https://yudhatirta@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/traveloka/www/'
+ip-10-10-47-78:Project yudhatirtandanu$ git@github.com:traveloka/www.git
+-bash: git@github.com:traveloka/www.git: No such file or directory
+ip-10-10-47-78:Project yudhatirtandanu$ git clone git@github.com:traveloka/www.git
+Cloning into 'www'...
+remote: Counting objects: 170290, done.
+remote: Compressing objects: 100% (118/118), done.
+remote: Total 170290 (delta 58), reused 80 (delta 40), pack-reused 170131
+Receiving objects: 100% (170290/170290), 84.81 MiB | 3.12 MiB/s, done.
+Resolving deltas: 100% (120943/120943), done.
+Checking out files: 100% (14744/14744), done.
+ip-10-10-47-78:Project yudhatirtandanu$ git status
+fatal: not a git repository (or any of the parent directories): .git
+ip-10-10-47-78:Project yudhatirtandanu$ cd www
+ip-10-10-47-78:www yudhatirtandanu$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+ip-10-10-47-78:www yudhatirtandanu$ git branch
+* master
+ip-10-10-47-78:www yudhatirtandanu$ git fetch release
+fatal: 'release' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+ip-10-10-47-78:www yudhatirtandanu$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+ip-10-10-47-78:www yudhatirtandanu$ git checkout release
+Branch 'release' set up to track remote branch 'release' from 'origin'.
+Switched to a new branch 'release'
+ip-10-10-47-78:www yudhatirtandanu$ git status
+On branch release
+Your branch is up to date with 'origin/release'.
+
+nothing to commit, working tree clean
+ip-10-10-47-78:www yudhatirtandanu$ git merge master
+Removing scripts/upload-git-logs
+Removing scripts/upload-full-coverage
+Removing scripts/update-hooks
+Removing scripts/generate-phab-data.js
+Removing scripts/generate-git-logs.js
+Removing scripts/add-phabricator-reviewer
+Removing pipeline.groovy
+Auto-merging packages/web-ui/mobile/user/RegisterMobile/RegisterMobile.js
+Removing packages/web-ui/desktop/flight/FlightItinerary/FlightItineraryTitle.js
+Removing packages/web-ui/desktop/flight/FlightItinerary/FlightItinerarySubtitle.js
+Removing packages/web-ui/desktop/flight/FlightItinerary/FlightItineraryAction.js
+Removing packages/web-ui/desktop/flight/FlightItinerary/FlightItinerary.story.js
+Removing packages/web-ui/desktop/flight/FlightItinerary/FlightItinerary.js
+Auto-merging packages/nodejs-web/src/shared/routes/desktop.js
+Auto-merging packages/nodejs-web/src/routes/desktop.js
+Auto-merging packages/nodejs-web/src/mobile/payment/shared/containers/EmbeddedPaymentComponentContainer/EmbeddedPaymentComponentContainer.js
+Auto-merging packages/nodejs-web/src/mobile/payment/PaymentAppRouter.js
+Removing packages/nodejs-web/src/desktop/user/transaction-list/components/ListOfTransactions/TransactionFilter.js
+Removing packages/nodejs-web/src/desktop/user/register/components/SignUpForm.js
+Removing packages/nodejs-web/src/desktop/user/booking-history/components/ProductTabPage/ProductTabPageContainer.js
+Removing packages/nodejs-web/src/desktop/user/booking-history/components/ProductTabPage/ProductTabPage.js
+Removing packages/nodejs-web/src/desktop/user/booking-history/components/ProductTabPage/ProductTabPage.css
+Removing packages/nodejs-web/src/desktop/user/booking-history/components/BookingHistoryList/BookingHistoryList.js
+Removing packages/nodejs-web/src/desktop/user/booking-history/components/BookingHistoryList/BookingHistoryList.css
+Auto-merging packages/nodejs-web/src/desktop/payment/selection/containers/RevampedPaymentSelectionPageContainer/RevampedPaymentSelectionPageContainer.js
+CONFLICT (content): Merge conflict in packages/nodejs-web/src/desktop/payment/selection/containers/RevampedPaymentSelectionPageContainer/RevampedPaymentSelectionPageContainer.js
+Removing packages/nodejs-web/package-lock.json
+Removing packages/nodejs-web/Dockerrun.aws.json
+Removing packages/nodejs-web/.ebextensions/logging.config
+Removing packages/nodejs-web/.ebextensions/datadog/hooks/99stop_datadog.sh
+Removing packages/nodejs-web/.ebextensions/datadog/hooks/99start_datadog.sh
+Removing packages/nodejs-web/.ebextensions/datadog/datadog.repo
+Removing packages/nodejs-web/.ebextensions/99_datadog.config
+Removing packages/nodejs-web/.ebextensions/99_collectd.config
+Removing packages/nodejs-web/.ebextensions/02_cloudwatch_metrics.config
+Removing packages/nodejs-web/.ebextensions/01_deploy_nginx.config
+Removing packages/nodejs-web/.ebextensions/00_hostname.config
+Removing packages/nodejs-web/.ebextensions/00_deploy_npm.config
+Removing git-pre-commit
+Removing Jenkinsfile.staging
+Removing Jenkinsfile.master
+Removing Jenkinsfile
+Removing .editorconfig
+Removing .arcconfig
+Automatic merge failed; fix conflicts and then commit the result.
+ip-10-10-47-78:www yudhatirtandanu$ git status
+On branch release
+Your branch is up to date with 'origin/release'.
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+
+	deleted:    .arcconfig
+	deleted:    .editorconfig
+	modified:   .github/CODEOWNERS
+	deleted:    Jenkinsfile
+	deleted:    Jenkinsfile.master
+	deleted:    Jenkinsfile.staging
+	deleted:    git-pre-commit
+	modified:   package.json
+	modified:   packages/e2e-test/package.json
+	new file:   packages/e2e-test/suite/mobile/user/MobileUserLoginLogoutSuite.js
+	new file:   packages/e2e-test/suite/mobile/user/MobileUserRegisterSuite.js
+	new file:   packages/e2e-test/unit/mobile/user/User.js
+	new file:   packages/e2e-test/unit/mobile/user/UserProfile.js
+	modified:   packages/e2e-test/yarn.lock
+	deleted:    packages/nodejs-web/.ebextensions/00_deploy_npm.config
+	deleted:    packages/nodejs-web/.ebextensions/00_hostname.config
+	deleted:    packages/nodejs-web/.ebextensions/01_deploy_nginx.config
+	deleted:    packages/nodejs-web/.ebextensions/02_cloudwatch_metrics.config
+	deleted:    packages/nodejs-web/.ebextensions/99_collectd.config
+	deleted:    packages/nodejs-web/.ebextensions/99_datadog.config
+	deleted:    packages/nodejs-web/.ebextensions/datadog/datadog.repo
+	deleted:    packages/nodejs-web/.ebextensions/datadog/hooks/99start_datadog.sh
+	deleted:    packages/nodejs-web/.ebextensions/datadog/hooks/99stop_datadog.sh
+	deleted:    packages/nodejs-web/.ebextensions/logging.config
+	deleted:    packages/nodejs-web/Dockerrun.aws.json
+	modified:   packages/nodejs-web/next.config.js
+	deleted:    packages/nodejs-web/package-lock.json
+	modified:   packages/nodejs-web/package.json
+	modified:   packages/nodejs-web/pages/desktop/flight/homepage.js
+	modified:   packages/nodejs-web/pages/desktop/flight/seo/destination.js
+	modified:   packages/nodejs-web/pages/desktop/generic/homepage.js
+	modified:   packages/nodejs-web/pages/test/test.js
+	modified:   packages/nodejs-web/scripts/WebpackConfigGenerator.js
+	modified:   packages/nodejs-web/src/desktop/bill/search/actions/BillSearchActionCreator.js
+	new file:   packages/nodejs-web/src/desktop/bill/search/actions/MobilePostpaidSearchActionCreator.js
+	new file:   packages/nodejs-web/src/desktop/bill/search/actions/MobilePostpaidSearchActionTypes.js
+	modified:   packages/nodejs-web/src/desktop/bill/search/components/BillSearchBox/BillSearchBox.js
+	new file:   packages/nodejs-web/src/desktop/bill/search/components/MobilePostpaidSearchForm/MobilePostpaidSearchForm.js
+	new file:   packages/nodejs-web/src/desktop/bill/search/constants/MobilePostpaidConstants.js
+	modified:   packages/nodejs-web/src/desktop/bill/search/constants/PathnameToDefaultProductTypeMap.js
+	modified:   packages/nodejs-web/src/desktop/bill/search/constants/TrackingConstants.js
+	modified:   packages/nodejs-web/src/desktop/bill/search/containers/BillSearchBox.js
+	new file:   packages/nodejs-web/src/desktop/bill/search/containers/MobilePostpaidSearchForm.js
+	modified:   packages/nodejs-web/src/desktop/bill/search/helpers/accountPickerModifiers.js
+	new file:   packages/nodejs-web/src/desktop/bill/search/reducers/MobilePostpaidSearchReducer.js
+	modified:   packages/nodejs-web/src/desktop/experience/detail/ExperienceDetailBase.js
+	modified:   packages/nodejs-web/src/desktop/experience/detail/ExperienceDetailPage.js
+	modified:   packages/nodejs-web/src/desktop/experience/search/components/ExperienceNewlyAdded/ExperienceNewlyAdded.js
+	modified:   packages/nodejs-web/src/desktop/experience/search/components/ExperienceSearchContent/ExperienceSearchContent.js
+	modified:   packages/nodejs-web/src/desktop/flight/refund2/components/RefundDetail.js
+	modified:   packages/nodejs-web/src/desktop/flight/refund2/components/RefundHistory.js
+	modified:   packages/nodejs-web/src/desktop/flight/reschedule2/components/RescheduleDetail.js
+	modified:   packages/nodejs-web/src/desktop/flight/reschedule2/components/RescheduleHistory.js
+	new file:   packages/nodejs-web/src/desktop/flight/shared/components/FlightSearchFormV2/FlightSearchFormV2.css
+	new file:   packages/nodejs-web/src/desktop/flight/shared/components/FlightSearchFormV2/FlightSearchFormV2.js
+	new file:   packages/nodejs-web/src/desktop/flight/shared/constants/FlightSearchFormConfig.js
+	new file:   packages/nodejs-web/src/desktop/flight/shared/utils/createFlightDataHelpers.js
+	new file:   packages/nodejs-web/src/desktop/flight/shared/utils/getCuratedAirports.js
+	modified:   packages/nodejs-web/src/desktop/generic/booking/BookingApp.js
+	modified:   packages/nodejs-web/src/desktop/generic/booking/BookingBase.js
+	new file:   packages/nodejs-web/src/desktop/generic/booking/actions/Bus/BusSeatSelectionAction.js
+	new file:   packages/nodejs-web/src/desktop/generic/booking/actions/ProductAddOnAction.js
+	modified:   packages/nodejs-web/src/desktop/generic/booking/actions/ProductNavigationHandling/BusProductNavigationHandling.js
+	new file:   packages/nodejs-web/src/desktop/generic/booking/components/ProductAddOns/ProductAddOnsWrapper/BusAddon/BusSeatSelection/BusSeatSelection.js
+	new file:   packages/nodejs-web/src/desktop/generic/booking/components/ProductAddOns/ProductAddOnsWrapper/BusAddon/BusSeatSelection/BusSeatSelectionModal/BusSeatSelectionModal.css
+	new file:   packages/nodejs-web/src/desktop/generic/booking/components/ProductAddOns/ProductAddOnsWrapper/BusAddon/BusSeatSelection/BusSeatSelectionModal/BusSeatSelectionModal.js
+	new file:   packages/nodejs-web/src/desktop/generic/booking/components/ProductAddOns/ProductAddOnsWrapper/BusAddon/BusSeatSelection/BusSeatSelectionModule/BusSeatSelectionModule.css
+	new file:   packages/nodejs-web/src/desktop/generic/booking/components/ProductAddOns/ProductAddOnsWrapper/BusAddon/BusSeatSelection/BusSeatSelectionModule/BusSeatSelectionModule.js
+	modified:   packages/nodejs-web/src/desktop/generic/booking/constants/BookingProductAddOnsComponentMap.js
+	new file:   packages/nodejs-web/src/desktop/generic/booking/containers/Bus/BusSeatSelection.js
+	modified:   packages/nodejs-web/src/desktop/generic/booking/reducers/BookingReducer.js
+	new file:   packages/nodejs-web/src/desktop/generic/booking/reducers/busSeatSelectionReducer.js
+	modified:   packages/nodejs-web/src/desktop/generic/booking/reducers/index.js
+	new file:   packages/nodejs-web/src/desktop/generic/booking/utils/Bus/busSeatSelectionUtils.js
+	modified:   packages/nodejs-web/src/desktop/generic/home/components/TripEntrySearchForm/TripEntrySearchForm.css
+	modified:   packages/nodejs-web/src/desktop/generic/home/components/TripEntrySearchForm/TripEntrySearchForm.js
+	modified:   packages/nodejs-web/src/desktop/generic/home/containers/TrainHotelSearchFormContainer.js
+	modified:   packages/nodejs-web/src/desktop/generic/home/containers/TripEntrySearchForm.js
+	modified:   packages/nodejs-web/src/desktop/hotel/detail/components/HotelDetailContent/HotelDetailContent.js
+	modified:   packages/nodejs-web/src/desktop/hotel/detail/components/HotelSearchTable/HotelSearchTable.js
+	modified:   packages/nodejs-web/src/desktop/hotel/detail/components/Pagination/Pagination.js
+	modified:   packages/nodejs-web/src/desktop/hotel/search/components/HotelAutocomplete/HotelAutocomplete.css
+	modified:   packages/nodejs-web/src/desktop/hotel/search/components/HotelAutocomplete/HotelAutocomplete.js
+	modified:   packages/nodejs-web/src/desktop/hotel/search/components/HotelAutocomplete/HotelAutocompleteItem.css
+	modified:   packages/nodejs-web/src/desktop/hotel/search/components/HotelSearchContent/HotelSearchContent.js
+	modified:   packages/nodejs-web/src/desktop/hotel/search/components/WalletInfo/WalletInfo.js
+	modified:   packages/nodejs-web/src/desktop/hotel/search/containers/HotelAutocomplete.js
+	modified:   packages/nodejs-web/src/desktop/hotel/search/containers/WalletInfo.js
+	modified:   packages/nodejs-web/src/desktop/hotel/shared/actions/HotelAutoCompleteAction.js
+	modified:   packages/nodejs-web/src/desktop/hotel/shared/actions/__tests__/HotelAutoCompleteAction.test.js
+	modified:   packages/nodejs-web/src/desktop/hotel/shared/constants/HotelAutoCompleteConstant.js
+	modified:   packages/nodejs-web/src/desktop/hotel/shared/reducers/HotelAutoCompleteReducer.js
+	modified:   packages/nodejs-web/src/desktop/hotel/shared/utils/HotelAutoCompleteUtil.js
+	modified:   packages/nodejs-web/src/desktop/mcp/generic/templates/OneColumnWithBillSearchApp.js
+	modified:   packages/nodejs-web/src/desktop/pages/DesktopPage.js
+	modified:   packages/nodejs-web/src/desktop/payment/selection/containers/EmbeddedPaymentFacilitySelectionFormContainer/EmbeddedPaymentFacilitySelectionFormContainer.js
+	modified:   packages/nodejs-web/src/desktop/payment/selection/containers/EmbeddedPaymentModalDialogContainer/EmbeddedPaymentModalDialogContainer.js
+	modified:   packages/nodejs-web/src/desktop/payment/selection/containers/OneClickCVVContainer/OneClickCVVContainer.js
+	modified:   packages/nodejs-web/src/desktop/payment/traveloka-pay/DesktopTravelokaPayApp.js
+	modified:   packages/nodejs-web/src/desktop/payment/traveloka-pay/DesktopTravelokaPayPage.js
+	modified:   packages/nodejs-web/src/desktop/payment/traveloka-pay/container/ShopAndPayContainer/ShopAndPayContainer.js
+	modified:   packages/nodejs-web/src/desktop/postbooking/product-details/ProductDetailsPage.js
+	modified:   packages/nodejs-web/src/desktop/postbooking/product-details/components/ProductDisplayWrapper/ProductDisplayWrapper.js
+	modified:   packages/nodejs-web/src/desktop/postbooking/product-details/constants/ProductDetailsMapping.js
+	new file:   packages/nodejs-web/src/desktop/postbooking/shared/utils/PostbookingUtils.js
+	new file:   packages/nodejs-web/src/desktop/postbooking/shared/utils/__tests__/PostbookingUtils.test.js
+	modified:   packages/nodejs-web/src/desktop/shared/components/SiteHeader/HeaderSideMenu/HeaderSideMenu.js
+	modified:   packages/nodejs-web/src/desktop/shared/components/SiteHeader/SiteHeader.js
+	modified:   packages/nodejs-web/src/desktop/shared/components/SiteHeader/UserHeaderDropdown/HeaderLogin/HeaderLogin.js
+	modified:   packages/nodejs-web/src/desktop/shared/components/SiteHeader/UserHeaderDropdown/HeaderLogin/HeaderLoginContainer.js
+	modified:   packages/nodejs-web/src/desktop/shared/components/SiteHeader/UserHeaderDropdown/HeaderLogin/HeaderSocialLogin.js
+	modified:   packages/nodejs-web/src/desktop/shared/components/SiteHeader/UserHeaderDropdown/HeaderUserNav/UserHeaderNav.js
+	modified:   packages/nodejs-web/src/desktop/shared/components/StandardizedOTPModal/StandardizedOTPModalContainer.js
+	modified:   packages/nodejs-web/src/desktop/shared/components/StandardizedOTPModal/segments/ChooseOTPRecipientContainer.js
+	modified:   packages/nodejs-web/src/desktop/shared/components/StandardizedOTPModal/segments/VerifyOTPFormContainer.js
+	modified:   packages/nodejs-web/src/desktop/trip/refund/components/TripRefundContent/TripRefundContent.js
+	modified:   packages/nodejs-web/src/desktop/trip/refund/utils/TripRefundUtils.js
+	modified:   packages/nodejs-web/src/desktop/trip/reschedule/components/TripRescheduleContent/TripRescheduleContent.js
+	modified:   packages/nodejs-web/src/desktop/trip/reschedule/utils/TripRescheduleUtils.js
+	modified:   packages/nodejs-web/src/desktop/trip/shared/actions/TripSearchHotelAutoCompleteAction.js
+	modified:   packages/nodejs-web/src/desktop/trip/shared/components/HotelSearchForm/HotelSearchForm.js
+	modified:   packages/nodejs-web/src/desktop/trip/shared/components/TripSearchForm/TripSearchForm.js
+	modified:   packages/nodejs-web/src/desktop/trip/shared/containers/NewHotelSearchFormContainer.js
+	modified:   packages/nodejs-web/src/desktop/trip/shared/containers/TripFlightSearchFormContainer.js
+	modified:   packages/nodejs-web/src/desktop/trip/shared/containers/TripHotelAutoComplete.js
+	modified:   packages/nodejs-web/src/desktop/trip/shared/containers/UpSellingFlightToFlightHotelSearchFormContainer.js
+	new file:   packages/nodejs-web/src/desktop/trip/shared/utils/TripYourArrivalCityUtils.js
+	new file:   packages/nodejs-web/src/desktop/trip/shared/utils/__tests__/TripYourArrivalCityUtils.test.js
+	modified:   packages/nodejs-web/src/desktop/trip/tripSearch/components/TripSearchHeader/TripSearchHeader.css
+	modified:   packages/nodejs-web/src/desktop/trip/tripSearch/components/TripSearchHeader/TripSearchHeader.js
+	modified:   packages/nodejs-web/src/desktop/trip/tripSearch/containers/TripSearchContainer.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/DesktopBookingHistoryApp.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/DesktopBookingHistoryPage.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/actions/BookingHistoryAction.js
+	new file:   packages/nodejs-web/src/desktop/user/booking-history/actions/BookingListTrackingAction.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingHistoryContent/BookingHistoryContent.css
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingHistoryContent/BookingHistoryContent.js
+	new file:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingHistoryContent/PurchaseListLinkCard.js
+	deleted:    packages/nodejs-web/src/desktop/user/booking-history/components/BookingHistoryList/BookingHistoryList.css
+	deleted:    packages/nodejs-web/src/desktop/user/booking-history/components/BookingHistoryList/BookingHistoryList.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/BookingActivitiesItem/BookingActivitiesItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/BookingBillItem/BookingBillItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/BookingBusItem/BookingBusItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/BookingConnectivityItem/BookingConnectivityItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/BookingFlightItem/BookingFlightItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/BookingHotelItem/BookingHotelItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/BookingItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/BookingTrainItem/BookingTrainItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/BookingTripItem/BookingTripItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingItem/hoc/BookingItemWrapper.js
+	new file:   packages/nodejs-web/src/desktop/user/booking-history/components/BookingListItem/BookingListItem.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/EasyRescheduleBanner/EasyRescheduleBanner.js
+	new file:   packages/nodejs-web/src/desktop/user/booking-history/components/ProductContent/ProductContent.css
+	new file:   packages/nodejs-web/src/desktop/user/booking-history/components/ProductContent/ProductContent.js
+	deleted:    packages/nodejs-web/src/desktop/user/booking-history/components/ProductTabPage/ProductTabPage.css
+	deleted:    packages/nodejs-web/src/desktop/user/booking-history/components/ProductTabPage/ProductTabPage.js
+	deleted:    packages/nodejs-web/src/desktop/user/booking-history/components/ProductTabPage/ProductTabPageContainer.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/components/RemoveBookingModal/RemoveBookingModal.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/constants/BookingHistoryConstants.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/constants/BookingProductConstants.js
+	new file:   packages/nodejs-web/src/desktop/user/booking-history/constants/BookingTrackingConstants.js
+	renamed:    packages/nodejs-web/src/desktop/user/booking-history/containers/BookingHistoryContent.js -> packages/nodejs-web/src/desktop/user/booking-history/containers/BookingHistoryContainer.js
+	new file:   packages/nodejs-web/src/desktop/user/booking-history/containers/ProductContentContainer.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/reducers/BookingHistoryReducer.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/utils/BookingHistoryUtils.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/utils/BookingTripUtils.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/utils/ItineraryUtils.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/utils/__tests__/BookingHistoryUtils.test.js
+	modified:   packages/nodejs-web/src/desktop/user/booking-history/utils/__tests__/BookingTripUtils.test.js
+	modified:   packages/nodejs-web/src/desktop/user/edit-profile/components/VerifyAddLogin/VerifyAddLogin.js
+	modified:   packages/nodejs-web/src/desktop/user/edit-profile/container/VerifyAddLoginContainer.js
+	deleted:    packages/nodejs-web/src/desktop/user/register/components/SignUpForm.js
+	modified:   packages/nodejs-web/src/desktop/user/sales-order/DesktopSalesOrderPage.js
+	modified:   packages/nodejs-web/src/desktop/user/sales-order/components/SalesOrderContent.js
+	modified:   packages/nodejs-web/src/desktop/user/sales-order/components/SalesOrderDetail.js
+	modified:   packages/nodejs-web/src/desktop/user/shared/components/complete-signup-segment/CompleteSignUpSegment.js
+	modified:   packages/nodejs-web/src/desktop/user/shared/components/complete-signup-segment/CompleteSignUpSegmentContainer.js
+	modified:   packages/nodejs-web/src/desktop/user/shared/components/register-segment/RegisterSegment.js
+	modified:   packages/nodejs-web/src/desktop/user/shared/components/register-segment/RegisterSegmentContainer.js
+	modified:   packages/nodejs-web/src/desktop/user/shared/components/social-signin/SignupAndLinkModal.js
+	modified:   packages/nodejs-web/src/desktop/user/shared/components/verify-token-segment/VerifyTokenSegment.js
+	modified:   packages/nodejs-web/src/desktop/user/shared/components/verify-token-segment/VerifyTokenSegmentContainer.js
+	new file:   packages/nodejs-web/src/desktop/user/transaction-list/actions/TransactionListTrackingAction.js
+	modified:   packages/nodejs-web/src/desktop/user/transaction-list/components/ListOfTransactions/EmptyTransactionList.js
+	modified:   packages/nodejs-web/src/desktop/user/transaction-list/components/ListOfTransactions/ListOfTransaction.css
+	modified:   packages/nodejs-web/src/desktop/user/transaction-list/components/ListOfTransactions/ListOfTransactions.js
+	deleted:    packages/nodejs-web/src/desktop/user/transaction-list/components/ListOfTransactions/TransactionFilter.js
+	new file:   packages/nodejs-web/src/desktop/user/transaction-list/components/ListOfTransactions/TransactionItem.js
+	modified:   packages/nodejs-web/src/desktop/user/transaction-list/components/TransactionDetailView/TransactionProductItems.js
+	new file:   packages/nodejs-web/src/desktop/user/transaction-list/components/TransactionFilter/TransactionDateFilter.js
+	new file:   packages/nodejs-web/src/desktop/user/transaction-list/components/TransactionFilter/TransactionFilter.css
+	new file:   packages/nodejs-web/src/desktop/user/transaction-list/components/TransactionFilter/TransactionFilter.js
+	new file:   packages/nodejs-web/src/desktop/user/transaction-list/components/TransactionFilter/TransactionProductFilter.js
+	modified:   packages/nodejs-web/src/desktop/user/transaction-list/components/TransactionListPageContent/TransactionListPageContent.js
+	modified:   packages/nodejs-web/src/desktop/user/transaction-list/containers/ListOfTransactionContainer.js
+	new file:   packages/nodejs-web/src/desktop/user/transaction-list/utils/TransactionFilterUtils.js
+	new file:   packages/nodejs-web/src/desktop/user/transaction-list/utils/__tests__/TransactionFilterUtils.test.js
+	modified:   packages/nodejs-web/src/mobile/cinema/CinemaApp.js
+	modified:   packages/nodejs-web/src/mobile/cinema/CinemaAppRouter.js
+	modified:   packages/nodejs-web/src/mobile/cinema/home/components/ExploreContent/ExploreContent.js
+	new file:   packages/nodejs-web/src/mobile/cinema/shared/components/RedirectToCinemaHome.js
+	modified:   packages/nodejs-web/src/mobile/cinema/shared/components/TheaterList/TheaterList.js
+	modified:   packages/nodejs-web/src/mobile/cinema/shared/constants/ContentResourceConstants.js
+	modified:   packages/nodejs-web/src/mobile/cinema/shared/reducers/CinemaReducers.js
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/TheaterDetailPage.js
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/actions/TheaterDetailActions.js
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/components/TheaterDetailCard/TheaterDetailCard.css
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/components/TheaterDetailCard/TheaterDetailCard.js
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/components/TheaterDetailContainer/TheaterDetailContainer.css
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/components/TheaterDetailContainer/TheaterDetailContainer.js
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/constants/TheaterDetailActionType.js
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/containers/TheaterDetailCard.js
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/containers/TheaterDetailContainer.js
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/reducers/TheaterDetailReducer.js
+	new file:   packages/nodejs-web/src/mobile/cinema/theaterDetail/reducers/TheaterDetailReducers.js
+	new file:   packages/nodejs-web/src/mobile/cinema/utils/PropsParser.js
+	modified:   packages/nodejs-web/src/mobile/culinary/CulinaryApp.js
+	modified:   packages/nodejs-web/src/mobile/experience/ExperienceApp.js
+	modified:   packages/nodejs-web/src/mobile/experience/ExperiencePageTemplate.js
+	modified:   packages/nodejs-web/src/mobile/experience/destination/components/DestinationHeader/DestinationHeader.js
+	new file:   packages/nodejs-web/src/mobile/experience/destination/components/__tests__/DestinationHeader.test.js
+	modified:   packages/nodejs-web/src/mobile/experience/destination/helpers/DestinationSSRHelper.js
+	modified:   packages/nodejs-web/src/mobile/experience/destination/helpers/__tests__/__snapshots__/DestinationSSRHelper.test.js.snap
+	modified:   packages/nodejs-web/src/mobile/experience/detail/helpers/ProductDetailSSRHelper.js
+	modified:   packages/nodejs-web/src/mobile/experience/detail/helpers/__tests__/__snapshots__/ProductDetailSSRHelper.test.js.snap
+	modified:   packages/nodejs-web/src/mobile/experience/shared/components/SeoInternalLinks/SeoInternalLinks.css
+	modified:   packages/nodejs-web/src/mobile/experience/shared/components/SeoInternalLinks/SeoInternalLinks.js
+	new file:   packages/nodejs-web/src/mobile/experience/shared/components/__tests__/SeoInternalLinks.test.js
+	new file:   packages/nodejs-web/src/mobile/experience/shared/components/__tests__/__snapshots__/SeoInternalLinks.test.js.snap
+	modified:   packages/nodejs-web/src/mobile/flight/search/RedirectNewFeature.js
+	modified:   packages/nodejs-web/src/mobile/generic/home/MenuEmbed.js
+	modified:   packages/nodejs-web/src/mobile/hotel/HotelApp.js
+	modified:   packages/nodejs-web/src/mobile/hotel/home/containers/HotelSearchForm.js
+	modified:   packages/nodejs-web/src/mobile/hotel/shared/actions/HotelActions.js
+	new file:   packages/nodejs-web/src/mobile/hotel/shared/components/HotelAutocompleteAreaRecommendation/HotelAutocompleteAreaRecommendation.css
+	new file:   packages/nodejs-web/src/mobile/hotel/shared/components/HotelAutocompleteAreaRecommendation/HotelAutocompleteAreaRecommendation.js
+	modified:   packages/nodejs-web/src/mobile/hotel/shared/components/HotelModalSearchHeader/HotelModalSearchHeader.js
+	modified:   packages/nodejs-web/src/mobile/hotel/shared/components/HotelSearchModal/HotelSearchModal.js
+	modified:   packages/nodejs-web/src/mobile/hotel/shared/components/HotelSearchModal/HotelSearchModalResult.css
+	modified:   packages/nodejs-web/src/mobile/hotel/shared/components/HotelSearchModal/HotelSearchModalResult.js
+	modified:   packages/nodejs-web/src/mobile/hotel/shared/containers/HotelSearchModal.js
+	modified:   packages/nodejs-web/src/mobile/hotel/shared/reducers/HotelReducers.js
+	modified:   packages/nodejs-web/src/mobile/pages/MCP/templates/MCPConnectivitySearchContainer.js
+	modified:   packages/nodejs-web/src/mobile/pages/MCP/templates/client/FlightSearchContainerClient.js
+	modified:   packages/nodejs-web/src/mobile/pages/MCP/templates/client/TrainSearchContainerClient.js
+	modified:   packages/nodejs-web/src/mobile/pages/MobilePage.js
+	modified:   packages/nodejs-web/src/mobile/payment/PaymentApp.js
+	modified:   packages/nodejs-web/src/mobile/payment/PaymentAppRouter.js
+	modified:   packages/nodejs-web/src/mobile/payment/selection/containers/EmbeddedOneClickPaymentFormContainer/EmbeddedOneClickPaymentFormContainer.js
+	modified:   packages/nodejs-web/src/mobile/payment/shared/containers/CVVAuthenticationModalDialogContainer/CVVAuthenticationModalDialogContainer.js
+	modified:   packages/nodejs-web/src/mobile/payment/shared/containers/EmbeddedPaymentComponentContainer/EmbeddedPaymentComponentContainer.js
+	modified:   packages/nodejs-web/src/mobile/payment/traveloka-card/TravelokaCardApp.js
+	modified:   packages/nodejs-web/src/mobile/payment/traveloka-pay/TravelokaPayApp.js
+	modified:   packages/nodejs-web/src/mobile/shared/components/AppInstallBanner/AppInstallBanner.js
+	modified:   packages/nodejs-web/src/mobile/shared/components/HeaderAwareContainer/HeaderAwareContainer.css
+	modified:   packages/nodejs-web/src/mobile/train/home/MobileTrainHome.js
+	new file:   packages/nodejs-web/src/mobile/train/home/containers/TrainSEOPopularDestination.js
+	new file:   packages/nodejs-web/src/mobile/train/home/containers/TrainSEOPopularPackage.js
+	new file:   packages/nodejs-web/src/mobile/train/home/containers/TrainSEOPopularRoute.js
+	modified:   packages/nodejs-web/src/mobile/user/MobileUserPagesRouteConfig.js
+	modified:   packages/nodejs-web/src/mobile/user/account-page/components/UserAccountMenus/UserAccountMenus.js
+	modified:   packages/nodejs-web/src/mobile/user/complete-signup/components/MobileCompleteSignUp/MobileCompleteSignUp.js
+	modified:   packages/nodejs-web/src/mobile/user/edit-profile/EditProfilePage.js
+	modified:   packages/nodejs-web/src/mobile/user/edit-profile/components/LoginListTable/LoginListItem.js
+	modified:   packages/nodejs-web/src/mobile/user/login-travelokapay/LoginTravelokaPayApp.js
+	modified:   packages/nodejs-web/src/mobile/user/login/MobileLoginPage.js
+	modified:   packages/nodejs-web/src/mobile/user/loyalty-points/MobileLoyaltyPointsApp.js
+	modified:   packages/nodejs-web/src/mobile/user/retrieve-booking/RetrieveBookingApp.js
+	modified:   packages/nodejs-web/src/mobile/user/shared/components/PasswordOnlyReauthenticationLoginForm/PasswordOnlyReauthenticationLoginForm.js
+	modified:   packages/nodejs-web/src/mobile/user/shared/containers/std-user-otp-modal-container/StandardizedOTPModalContainer.js
+	modified:   packages/nodejs-web/src/mobile/user/shared/containers/std-user-otp-modal-container/segments/StandardizedOTPChooseRecipientContainer.js
+	modified:   packages/nodejs-web/src/mobile/user/shared/containers/std-user-otp-modal-container/segments/StandardizedOTPVerifyTokenContainer.js
+	new file:   packages/nodejs-web/src/mobile/user/verify-add-login/VerifyAddLoginPage.js
+	new file:   packages/nodejs-web/src/mobile/user/verify-add-login/components/SetPasswordAndVerify/SetPasswordAndVerify.js
+	new file:   packages/nodejs-web/src/mobile/user/verify-add-login/components/VerifyAddLoginAlert/VerifyAddLoginAlert.js
+	new file:   packages/nodejs-web/src/mobile/user/verify-add-login/components/VerifyAddLoginForm/VerifyAddLoginForm.css
+	new file:   packages/nodejs-web/src/mobile/user/verify-add-login/components/VerifyAddLoginForm/VerifyAddLoginForm.js
+	new file:   packages/nodejs-web/src/mobile/user/verify-add-login/containers/SetPasswordAndVerifyContainer.js
+	new file:   packages/nodejs-web/src/mobile/user/verify-add-login/containers/VerifyAddLoginAlertContainer.js
+	new file:   packages/nodejs-web/src/mobile/user/verify-add-login/containers/VerifyAddLoginFormContainer.js
+	modified:   packages/nodejs-web/src/mobile/user/verify-token-register/components/MobileVerifyTokenRegisterSegment/MobileVerifyTokenRegisterSegment.js
+	modified:   packages/nodejs-web/src/routes/desktop.js
+	modified:   packages/nodejs-web/src/routes/mobile.js
+	modified:   packages/nodejs-web/src/shared/actions/user/EditProfileAction.js
+	modified:   packages/nodejs-web/src/shared/actions/user/LoginRegisterActions.js
+	renamed:    packages/nodejs-web/src/shared/actions/StandardizedOTPActions.js -> packages/nodejs-web/src/shared/actions/user/StandardizedOTPActions.js
+	modified:   packages/nodejs-web/src/shared/actions/user/TransactionListActions.js
+	modified:   packages/nodejs-web/src/shared/constants/CinemaConstants.js
+	modified:   packages/nodejs-web/src/shared/constants/HotelConstants.js
+	modified:   packages/nodejs-web/src/shared/constants/LocaleConstant.js
+	modified:   packages/nodejs-web/src/shared/constants/bill/BillAPIEndpoints.js
+	new file:   packages/nodejs-web/src/shared/constants/bill/enums/BillFeatureId.js
+	modified:   packages/nodejs-web/src/shared/constants/crossSelling/CrossSellingConstant.js
+	new file:   packages/nodejs-web/src/shared/constants/postbooking/ProductAssetMapping.js
+	new file:   packages/nodejs-web/src/shared/constants/postbooking/ProductTypeConstants.js
+	modified:   packages/nodejs-web/src/shared/constants/user/LoginRegisterConstants.js
+	renamed:    packages/nodejs-web/src/shared/constants/StandardizedOTPConstants.js -> packages/nodejs-web/src/shared/constants/user/StandardizedOTPConstants.js
+	new file:   packages/nodejs-web/src/shared/constants/user/TransactionFilterConstants.js
+	modified:   packages/nodejs-web/src/shared/constants/user/TransactionListConstants.js
+	modified:   packages/nodejs-web/src/shared/core/components/ClientSideFeatureControl.js
+	modified:   packages/nodejs-web/src/shared/core/components/FeatureControl.js
+	modified:   packages/nodejs-web/src/shared/core/components/__tests__/ClientSideFeatureControl.test.js
+	modified:   packages/nodejs-web/src/shared/core/components/__tests__/FeatureControlProvider.test.js
+	new file:   packages/nodejs-web/src/shared/core/filters/ClientInterfaceFilter.js
+	new file:   packages/nodejs-web/src/shared/core/utils/__tests__/createFeatureControlValue.test.js
+	new file:   packages/nodejs-web/src/shared/core/utils/createFeatureControlValue.js
+	modified:   packages/nodejs-web/src/shared/core/utils/createResolver.js
+	modified:   packages/nodejs-web/src/shared/next/NextPageWrapper.js
+	modified:   packages/nodejs-web/src/shared/reducers/user/EditProfileReducer.js
+	modified:   packages/nodejs-web/src/shared/reducers/user/LoginRegisterReducer.js
+	renamed:    packages/nodejs-web/src/shared/reducers/StandardizedOTPReducers.js -> packages/nodejs-web/src/shared/reducers/user/StandardizedOTPReducers.js
+	modified:   packages/nodejs-web/src/shared/reducers/user/TransactionListReducer.js
+	modified:   packages/nodejs-web/src/shared/resource/RouteResourceGroups.js
+	modified:   packages/nodejs-web/src/shared/routes/desktop.js
+	modified:   packages/nodejs-web/src/shared/utils/browser/AppInit.js
+	modified:   packages/nodejs-web/src/shared/utils/browser/__tests__/AppInit.test.js
+	modified:   packages/nodejs-web/src/shared/utils/browser/__tests__/__snapshots__/AppInit.test.js.snap
+	modified:   packages/nodejs-web/src/shared/utils/experience/ExperienceTagGenerator.js
+	modified:   packages/nodejs-web/src/shared/utils/experience/__tests__/ExperienceTagGenerator.test.js
+	modified:   packages/nodejs-web/src/shared/utils/experience/__tests__/__snapshots__/ExperienceTagGenerator.test.js.snap
+	new file:   packages/nodejs-web/src/shared/utils/injectLogger.js
+	modified:   packages/nodejs-web/src/shared/utils/payment/EmbeddedPaymentFormUtil.js
+	modified:   packages/nodejs-web/static/fx/js/src/service/ServiceBase.js
+	modified:   packages/nodejs-web/static/src/css/desktop/tv-hotel-search-table.css
+	modified:   packages/nodejs-web/static/src/js/assets/js/src/core/comm/context/TvUserContext.js
+	modified:   packages/nodejs-web/static/src/js/assets/js/src/m/page/modal/HotelSearchbox.js
+	modified:   packages/nodejs-web/static/src/js/assets/js/src/m/service/ApiCaller.js
+	modified:   packages/nodejs-web/static/src/js/assets/js/src/service/TvServiceBase.js
+	modified:   packages/nodejs-web/static/src/js/assets/js/src/service/hotel/HotelAutocompleteService.js
+	modified:   packages/nodejs-web/static/src/js/assets/js/src/ui/widget/autocomplete/HotelSearchBoxAutocomplete.js
+	modified:   packages/nodejs-web/static/src/js/assets/js/src/ui/widget/search/HotelSearchTable.js
+	new file:   packages/web-ui/desktop/bus/BusSeatSelection/BusSeatMapGrid.js
+	modified:   packages/web-ui/desktop/bus/BusSeatSelection/BusSeatSelection.css
+	modified:   packages/web-ui/desktop/bus/BusSeatSelection/BusSeatSelection.js
+	modified:   packages/web-ui/desktop/bus/BusSeatSelection/BusSeatSelection.story.js
+	new file:   packages/web-ui/desktop/bus/BusSeatSelection/BusSeatSelectionMockProps.js
+	new file:   packages/web-ui/desktop/cx/Article/Article.css
+	new file:   packages/web-ui/desktop/cx/Article/Article.js
+	new file:   packages/web-ui/desktop/cx/Article/Article.story.js
+	new file:   packages/web-ui/desktop/cx/ArticleBreadcrumb/ArticleBreadcrumb.css
+	new file:   packages/web-ui/desktop/cx/ArticleBreadcrumb/ArticleBreadcrumb.js
+	new file:   packages/web-ui/desktop/cx/ArticleBreadcrumb/ArticleBreadcrumb.story.js
+	new file:   packages/web-ui/desktop/cx/ArticleListItem/ArticleListItem.css
+	new file:   packages/web-ui/desktop/cx/ArticleListItem/ArticleListItem.js
+	new file:   packages/web-ui/desktop/cx/ArticleListItem/ArticleListItem.story.js
+	new file:   packages/web-ui/desktop/cx/ArticleVote/ArticleVote.css
+	new file:   packages/web-ui/desktop/cx/ArticleVote/ArticleVote.js
+	new file:   packages/web-ui/desktop/cx/ArticleVote/ArticleVote.story.js
+	new file:   packages/web-ui/desktop/cx/CategoryList/CategoryList.css
+	new file:   packages/web-ui/desktop/cx/CategoryList/CategoryList.js
+	new file:   packages/web-ui/desktop/cx/CategoryList/CategoryList.story.js
+	new file:   packages/web-ui/desktop/cx/CategoryList/CategoryListItem.js
+	new file:   packages/web-ui/desktop/cx/HelpCenterLayout/HelpCenterLayout.story.js
+	new file:   packages/web-ui/desktop/cx/ProductBadge/ProductBadge.css
+	new file:   packages/web-ui/desktop/cx/ProductBadge/ProductBadge.js
+	new file:   packages/web-ui/desktop/cx/ProductBadge/ProductBadge.story.js
+	deleted:    packages/web-ui/desktop/flight/FlightItinerary/FlightItinerary.js
+	deleted:    packages/web-ui/desktop/flight/FlightItinerary/FlightItinerary.story.js
+	deleted:    packages/web-ui/desktop/flight/FlightItinerary/FlightItineraryAction.js
+	deleted:    packages/web-ui/desktop/flight/FlightItinerary/FlightItinerarySubtitle.js
+	deleted:    packages/web-ui/desktop/flight/FlightItinerary/FlightItineraryTitle.js
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/AirportSuggestionList.css
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/AirportSuggestionList.js
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/Checkbox.css
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/Checkbox.js
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/CuratedAirports.css
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/CuratedAirports.js
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/Field.css
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/Field.js
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/FieldInput.js
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/FlightPassengerSpecifier.css
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/FlightPassengerSpecifier.js
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/FlightSearchForm.css
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/FlightSearchForm.js
+	new file:   packages/web-ui/desktop/flight/FlightSearchForm/helpers.js
+	modified:   packages/web-ui/desktop/flight/RefundRescheduleInfo/RefundRescheduleInfo.js
+	modified:   packages/web-ui/desktop/flight/RefundRescheduleRequest/RefundRescheduleRequest.js
+	modified:   packages/web-ui/desktop/flight/helpers/airportDataConverter.js
+	modified:   packages/web-ui/desktop/hotel/HotelLightbox/HotelLightbox.css
+	modified:   packages/web-ui/desktop/hotel/HotelLightbox/HotelLightbox.js
+	new file:   packages/web-ui/desktop/hotel/HotelRecommendationListItem/HotelRecommendationListItem.css
+	new file:   packages/web-ui/desktop/hotel/HotelRecommendationListItem/HotelRecommendationListItem.js
+	new file:   packages/web-ui/desktop/hotel/HotelRecommendationListItem/HotelRecommendationListItem.story.js
+	new file:   packages/web-ui/desktop/hotel/Image/Image.css
+	modified:   packages/web-ui/desktop/hotel/Image/Image.js
+	modified:   packages/web-ui/desktop/shared/Collapsible/Collapsible.js
+	new file:   packages/web-ui/desktop/shared/CollapsibleCard/CollapsibleCard.css
+	new file:   packages/web-ui/desktop/shared/CollapsibleCard/CollapsibleCard.js
+	new file:   packages/web-ui/desktop/shared/CollapsibleCard/CollapsibleCard.story.js
+	new file:   packages/web-ui/desktop/shared/CollapsibleCard/README.md
+	new file:   packages/web-ui/desktop/shared/Datepicker/Calendar.css
+	new file:   packages/web-ui/desktop/shared/Datepicker/Calendar.js
+	new file:   packages/web-ui/desktop/shared/Datepicker/Datepicker.new.js
+	new file:   packages/web-ui/desktop/shared/Datepicker/helpers.js
+	modified:   packages/web-ui/desktop/shared/Iconset/Iconset.story.js
+	new file:   packages/web-ui/desktop/shared/Item/Item.css
+	new file:   packages/web-ui/desktop/shared/Item/Item.js
+	new file:   packages/web-ui/desktop/shared/Item/Item.story.js
+	new file:   packages/web-ui/desktop/shared/Item/ItemContent.js
+	new file:   packages/web-ui/desktop/shared/Item/ItemIcon.js
+	new file:   packages/web-ui/desktop/shared/Item/ItemSubtitle.js
+	new file:   packages/web-ui/desktop/shared/Item/ItemTitle.js
+	new file:   packages/web-ui/desktop/shared/Item/README.md
+	renamed:    packages/web-ui/desktop/flight/FlightItinerary/FlightItinerary.css -> packages/web-ui/desktop/shared/Itinerary/Itinerary.css
+	new file:   packages/web-ui/desktop/shared/Itinerary/Itinerary.js
+	new file:   packages/web-ui/desktop/shared/Itinerary/Itinerary.story.js
+	new file:   packages/web-ui/desktop/shared/Itinerary/ItineraryAction.js
+	renamed:    packages/web-ui/desktop/flight/FlightItinerary/FlightItineraryFooter.js -> packages/web-ui/desktop/shared/Itinerary/ItineraryFooter.js
+	renamed:    packages/web-ui/desktop/flight/FlightItinerary/FlightItineraryHeader.js -> packages/web-ui/desktop/shared/Itinerary/ItineraryHeader.js
+	renamed:    packages/web-ui/desktop/flight/FlightItinerary/FlightItineraryRoute.js -> packages/web-ui/desktop/shared/Itinerary/ItineraryRoute.js
+	renamed:    packages/web-ui/desktop/flight/FlightItinerary/FlightItinerarySegment.js -> packages/web-ui/desktop/shared/Itinerary/ItinerarySegment.js
+	renamed:    packages/web-ui/desktop/flight/FlightItinerary/FlightItinerarySegmentList.js -> packages/web-ui/desktop/shared/Itinerary/ItinerarySegmentList.js
+	new file:   packages/web-ui/desktop/shared/Itinerary/ItinerarySubtitle.js
+	new file:   packages/web-ui/desktop/shared/Itinerary/ItineraryTitle.js
+	renamed:    packages/web-ui/desktop/flight/FlightItinerary/FlightItineraryTripSegment.js -> packages/web-ui/desktop/shared/Itinerary/ItineraryTripSegment.js
+	modified:   packages/web-ui/desktop/shared/Paper/Paper.css
+	modified:   packages/web-ui/desktop/shared/Paper/Paper.js
+	new file:   packages/web-ui/desktop/shared/ProductLeftIndicator/ProductLeftIndicator.css
+	new file:   packages/web-ui/desktop/shared/ProductLeftIndicator/ProductLeftIndicator.js
+	new file:   packages/web-ui/desktop/shared/ProductLeftIndicator/ProductLeftIndicator.story.js
+	modified:   packages/web-ui/desktop/shared/Pushpin/Pushpin.js
+	new file:   packages/web-ui/desktop/shared/SelectV2/README.md
+	new file:   packages/web-ui/desktop/shared/SelectV2/Select.css
+	new file:   packages/web-ui/desktop/shared/SelectV2/Select.js
+	new file:   packages/web-ui/desktop/shared/SelectV2/SelectOption.js
+	new file:   packages/web-ui/desktop/shared/SelectV2/SelectOptionList.js
+	new file:   packages/web-ui/desktop/shared/SelectV2/SelectV2.story.js
+	new file:   packages/web-ui/desktop/shared/TextIcon/TextIcon.css
+	new file:   packages/web-ui/desktop/shared/TextIcon/TextIcon.js
+	new file:   packages/web-ui/desktop/shared/TextIcon/TextIcon.story.js
+	modified:   packages/web-ui/desktop/user/MyBookingAccordion/MyBookingAccordion.js
+	modified:   packages/web-ui/desktop/user/MyBookingCard/MyBookingCard.js
+	modified:   packages/web-ui/desktop/user/TransactionCard/TransactionCard.css
+	modified:   packages/web-ui/desktop/user/TransactionCard/TransactionCard.js
+	modified:   packages/web-ui/desktop/user/TransactionDetailCard/TransactionDetailCard.js
+	modified:   packages/web-ui/mobile/cinema/CalendarSlider/CalendarSlider.css
+	modified:   packages/web-ui/mobile/cinema/CalendarSlider/CalendarSlider.js
+	modified:   packages/web-ui/mobile/cinema/CalendarSliderItem/CalendarSliderItem.css
+	modified:   packages/web-ui/mobile/cinema/CalendarSliderItem/CalendarSliderItem.js
+	new file:   packages/web-ui/mobile/cinema/MovieCollapsibleHeader/MovieCollapsibleHeader.css
+	new file:   packages/web-ui/mobile/cinema/MovieCollapsibleHeader/MovieCollapsibleHeader.js
+	new file:   packages/web-ui/mobile/cinema/MovieCollapsibleHeader/MovieCollapsibleHeader.story.js
+	modified:   packages/web-ui/mobile/cinema/TheaterListItem/TheaterListItem.css
+	modified:   packages/web-ui/mobile/cinema/TheaterListItem/TheaterListItem.js
+	modified:   packages/web-ui/mobile/flight/FlightResultItemCard/FlightResultItemCard.new.css
+	new file:   packages/web-ui/mobile/hotel/AreaRecommendation/AreaRecommendation.css
+	new file:   packages/web-ui/mobile/hotel/AreaRecommendation/AreaRecommendation.js
+	new file:   packages/web-ui/mobile/hotel/AreaRecommendation/AreaRecommendation.story.js
+	modified:   packages/web-ui/mobile/shared/FullPageModal/FullPageModal.js
+	modified:   packages/web-ui/mobile/shared/MainHeader/MainHeader.js
+	new file:   packages/web-ui/mobile/train/TrainImageBox/TrainImageBox.css
+	new file:   packages/web-ui/mobile/train/TrainImageBox/TrainImageBox.js
+	new file:   packages/web-ui/mobile/train/TrainImageBox/TrainImageBox.story.js
+	new file:   packages/web-ui/mobile/train/TrainImageCard/TrainImageCard.css
+	new file:   packages/web-ui/mobile/train/TrainImageCard/TrainImageCard.js
+	new file:   packages/web-ui/mobile/train/TrainImageCard/TrainImageCard.story.js
+	new file:   packages/web-ui/mobile/train/TrainSEOPopularContainer/TrainSEOPopularContainer.css
+	new file:   packages/web-ui/mobile/train/TrainSEOPopularContainer/TrainSEOPopularContainer.js
+	modified:   packages/web-ui/mobile/user/LoginMobile/LoginMobile.js
+	modified:   packages/web-ui/mobile/user/MyBookingFilter/DropdownTime.js
+	modified:   packages/web-ui/mobile/user/MyBookingFilter/components/Filter.css
+	modified:   packages/web-ui/mobile/user/RegisterMobile/RegisterMobile.js
+	modified:   packages/web-ui/package.json
+	modified:   packages/web-ui/shared/constants/KeyboardConstants.js
+	new file:   packages/web-ui/shared/svg-icons/BillMobilePostpaid.js
+	modified:   packages/web-ui/shared/svg-icons/ChevronUp.js
+	new file:   packages/web-ui/shared/svg-icons/CinemaTheaterDetailNoMovie.js
+	new file:   packages/web-ui/shared/svg-icons/ConnectivityInt.js
+	modified:   packages/web-ui/shared/svg-icons/__tests__/__snapshots__/ChevronUp.test.js.snap
+	new file:   packages/web-ui/shared/svg-icons/glyph/SysCaretDownGlyph.js
+	new file:   packages/web-ui/shared/svg-icons/glyph/SysCaretRightGlyph.js
+	new file:   packages/web-ui/shared/svg-icons/small/BillMobilePostpaidSmall.js
+	new file:   packages/web-ui/shared/svg-icons/small/ReactionEmotionFrownSmall.js
+	new file:   packages/web-ui/shared/svg-icons/small/ReactionEmotionSmileSmall.js
+	new file:   packages/web-ui/shared/svg-icons/small/StatusInfoLineSmall.js
+	new file:   packages/web-ui/shared/svg-icons/small/StatusSuccessLineSmall.js
+	new file:   packages/web-ui/shared/svg-icons/small/SysChevronDownSmall.js
+	new file:   packages/web-ui/shared/svg-icons/small/SysChevronLeftSmall.js
+	new file:   packages/web-ui/shared/svg-icons/small/SysChevronRightSmall.js
+	new file:   packages/web-ui/shared/svg-icons/small/SysChevronupSmall.js
+	modified:   packages/web-ui/yarn.lock
+	deleted:    pipeline.groovy
+	deleted:    scripts/add-phabricator-reviewer
+	deleted:    scripts/generate-git-logs.js
+	deleted:    scripts/generate-phab-data.js
+	modified:   scripts/push-images.sh
+	deleted:    scripts/update-hooks
+	deleted:    scripts/upload-full-coverage
+	deleted:    scripts/upload-git-logs
+	modified:   yarn.lock
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	both modified:   packages/nodejs-web/src/desktop/payment/selection/containers/RevampedPaymentSelectionPageContainer/RevampedPaymentSelectionPageContainer.js
+
+ip-10-10-47-78:www yudhatirtandanu$ git merge --continue
+[release e3c93d5f0] Merge branch 'master' into release
+ Committer: Yudha Tirtandanu <yudhatirtandanu@ip-10-10-47-78.ap-southeast-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ip-10-10-47-78:www yudhatirtandanu$ git status
+On branch release
+Your branch is ahead of 'origin/release' by 69 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+ip-10-10-47-78:www yudhatirtandanu$ git config --global user.name "Yudha Tirtandanu"
+ip-10-10-47-78:www yudhatirtandanu$ git config --global user.email "yudha.tirtandanu@traveloka.com
+> git config --global user.email "yudha.tirtandanu@traveloka.com"
+> 
+ip-10-10-47-78:www yudhatirtandanu$ git config --global user.email "yudha.tirtandanu@traveloka.com"
+ip-10-10-47-78:www yudhatirtandanu$ git status
+On branch release
+Your branch is ahead of 'origin/release' by 69 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+ip-10-10-47-78:www yudhatirtandanu$ git commit --amend --reset-author
+[release 983381380] Merge branch 'master' into release
+ip-10-10-47-78:www yudhatirtandanu$ git status
+On branch release
+Your branch is ahead of 'origin/release' by 69 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+ip-10-10-47-78:www yudhatirtandanu$ git push
+Warning: Permanently added the RSA host key for IP address '13.250.177.223' to the list of known hosts.
+Enumerating objects: 354, done.
+Counting objects: 100% (311/311), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (113/113), done.
+Writing objects: 100% (180/180), 61.56 KiB | 30.78 MiB/s, done.
+Total 180 (delta 106), reused 135 (delta 64)
+remote: Resolving deltas: 100% (106/106), completed with 72 local objects.
+remote: error: GH006: Protected branch update failed for refs/heads/release.
+remote: error: Required status check "Danger" is expected. Waiting on code owner review from traveloka/web, traveloka/web-accom, traveloka/web-flight, traveloka/web-infra, traveloka/web-lnd, traveloka/web-payment, traveloka/web-train, traveloka/web-trip, and/or traveloka/web-user.
+To github.com:traveloka/www.git
+ ! [remote rejected]     release -> release (protected branch hook declined)
+error: failed to push some refs to 'git@github.com:traveloka/www.git'
+ip-10-10-47-78:www yudhatirtandanu$ git remote
+origin
+ip-10-10-47-78:www yudhatirtandanu$ git remote add yudha git@github.com:yudhatirta/www.git
+ip-10-10-47-78:www yudhatirtandanu$ git remote
+origin
+yudha
+ip-10-10-47-78:www yudhatirtandanu$ git push yudha
+Enumerating objects: 6241, done.
+Counting objects: 100% (5248/5248), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (1922/1922), done.
+Writing objects: 100% (4175/4175), 919.26 KiB | 6.17 MiB/s, done.
+Total 4175 (delta 2574), reused 3537 (delta 2169)
+remote: Resolving deltas: 100% (2574/2574), completed with 816 local objects.
+To github.com:yudhatirta/www.git
+   a153fd374..983381380  release -> release
+ip-10-10-47-78:www yudhatirtandanu$ git checkout origin/release
+Note: checking out 'origin/release'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 9001fd239 [FIX][PAYMENT] Fix upload error in awaiting verification page. (#1899)
+ip-10-10-47-78:www yudhatirtandanu$ git tag release-backup-25072018
+ip-10-10-47-78:www yudhatirtandanu$ git push origin release-backup-25072018
+Total 0 (delta 0), reused 0 (delta 0)
+To github.com:traveloka/www.git
+ * [new tag]             release-backup-25072018 -> release-backup-25072018
+ip-10-10-47-78:www yudhatirtandanu$ git checkout yudha
+error: pathspec 'yudha' did not match any file(s) known to git.
+ip-10-10-47-78:www yudhatirtandanu$ git checkout release
+Previous HEAD position was 9001fd239 [FIX][PAYMENT] Fix upload error in awaiting verification page. (#1899)
+Switched to branch 'release'
+Your branch is ahead of 'origin/release' by 69 commits.
+  (use "git push" to publish your local commits)
+ip-10-10-47-78:www yudhatirtandanu$ git status
+On branch release
+Your branch is ahead of 'origin/release' by 69 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+ip-10-10-47-78:www yudhatirtandanu$ git push origin release
+Enumerating objects: 354, done.
+Counting objects: 100% (311/311), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (113/113), done.
+Writing objects: 100% (180/180), 61.56 KiB | 15.39 MiB/s, done.
+Total 180 (delta 106), reused 135 (delta 64)
+remote: Resolving deltas: 100% (106/106), completed with 72 local objects.
+remote: error: GH006: Protected branch update failed for refs/heads/release.
+remote: error: Required status check "Danger" is expected. Waiting on code owner review from traveloka/web, traveloka/web-accom, traveloka/web-flight, traveloka/web-infra, traveloka/web-lnd, traveloka/web-payment, traveloka/web-train, traveloka/web-trip, and/or traveloka/web-user.
+To github.com:traveloka/www.git
+ ! [remote rejected]     release -> release (protected branch hook declined)
+error: failed to push some refs to 'git@github.com:traveloka/www.git'
+ip-10-10-47-78:www yudhatirtandanu$ git push origin release
+Enumerating objects: 354, done.
+Counting objects: 100% (311/311), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (113/113), done.
+Writing objects: 100% (180/180), 61.56 KiB | 30.78 MiB/s, done.
+Total 180 (delta 106), reused 135 (delta 64)
+remote: Resolving deltas: 100% (106/106), completed with 72 local objects.
+To github.com:traveloka/www.git
+   9001fd239..983381380  release -> release
+ip-10-10-47-78:www yudhatirtandanu$ 
